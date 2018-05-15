@@ -19,6 +19,8 @@ public class MarksAlgorithm {
      */
     
     public static List<Integer> finalMarksArray = new ArrayList<Integer>();
+    public static List<String> subjects = new ArrayList<String>();
+    public static int separator =0;
     
     public static void main(String[] args) {
         // TODO code application logic here
@@ -31,18 +33,26 @@ public class MarksAlgorithm {
         Scanner input = new Scanner(System.in);
         String subjectMessage = "Enter Subject:";
         System.out.println(subjectMessage);
-        List<String> subjects = new ArrayList<String>();
-        subjects.add(subjectMessage);
-        String subject = input.next();
         
+        
+        String subject = input.next();
+        subjects.add(subject);
        // System.out.println(subjects);
         marks();
       
     }
     
     public static void displayMarks(){
+        System.out.println("Subjects enterd are:"+""+subjects);
         
-        System.out.println(finalMarksArray);
+        
+        int index = subjects.indexOf(separator);
+        //System.out.println("index is "+index);
+        System.out.println("Marks entered are: "+ ""+finalMarksArray);
+        //while (finalMarksArray.contains(separator)){
+            //System.out.println("Marks entered are: "+ ""+finalMarksArray.subList(0, finalMarksArray.size()-index));
+       //}
+        
             
         
     }
@@ -52,10 +62,10 @@ public class MarksAlgorithm {
         String studentNumberMessage = "Enter the number of student:";
         System.out.println(studentNumberMessage);
         int studentNumber = input.nextInt();
-        System.out.println("Student number is :"+studentNumber);
+        //System.out.println("Student number is :"+studentNumber);
 
         
-        List<Integer> marksArray = new ArrayList<Integer>();
+        //List<Integer> marksArray = new ArrayList<Integer>();
         
        
         
@@ -64,11 +74,15 @@ public class MarksAlgorithm {
          String marksMessage = "Enter the marks of the Students:";
          System.out.println(marksMessage);
          int marks = input.nextInt();
-         marksArray.add(marks);
+         
+         //marksArray.add(marks);
          finalMarksArray.add(marks);
+         
          i++;
         }
-        System.out.println("Marks are:"+marksArray);
+        
+        //finalMarksArray.add(separator);
+        //System.out.println("Marks are:"+marksArray);
         Scanner params = new Scanner(System.in);
         String proceedMessage = "Do you want to proceed to another subject?";
         System.out.println(proceedMessage);
@@ -78,8 +92,6 @@ public class MarksAlgorithm {
         
        // Boolean next = true;
         if(choise.contains("Y")){
-            String meso = "You are about to enter another subject";
-            System.out.println(meso);
             enterSubject();
         }
         else{
