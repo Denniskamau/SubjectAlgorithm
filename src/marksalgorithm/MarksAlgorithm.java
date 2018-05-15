@@ -53,12 +53,13 @@ public class MarksAlgorithm {
         while (finalMarksArray.contains(separator)){
             System.out.println("Marks entered are: "+ ""+finalMarksArray.subList(0, finalMarksArray.size()-index));
        }*/
+        
+        int arrayNo=0;
         for (int j=0; j<numberOfStudents.size();j++){
-            int arrayNo=0;
             int no=numberOfStudents.get(j);
             
 
-            System.out.println("Marks entered for "+ subjects.get(j) + ""+finalMarksArray.subList(arrayNo, no));
+            System.out.println("Marks entered for "+ subjects.get(j) + ""+finalMarksArray.subList(arrayNo, no+arrayNo));
             arrayNo+=no;
             
             
